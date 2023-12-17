@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ร้ายแรงมาก</title>
 
-
 </head>
 <body>
   <style>
@@ -23,6 +22,36 @@
     <br>
 
   </div>
-  
+  <div>
+    <input id="name1" type="text" placeholder="ชื่อร้ายแรง">
+    <button onclick="onClickButton()">ตรวจสอบร้ายแรง</button>
+    <p id="p1"></p>
+    <p id="p2"></p>
+  </div>
+  <script>
+  let star = 0;
+    function onClickButton() {
+      const name = document.getElementById("name1").value
+      document.getElementById("p1").innerHTML = "สวัสดี" + name + "ร้ายแรง";
+      
+      if (name == "แมน" || name == "เบน") {
+      	document.getElementById("p2").innerHTML = "ยินดีด้วยคุณได้เข้าโหมดลับ<br><button>ปั๊มตัง</button><button>ซื้อหนม</button><button>เติมเกมส์</button><button onclick='onClickStar()'>เก็บดาว</button><p id='p3'></p><input id='name2' type='text' placeholder='ทายรหัสลับ'><button onclick='onClickGuess()'>ตรวจสอบ</button>";
+      }
+    }
+    
+    function onClickStar() {
+    star = star + 1;
+       document.getElementById("p3").innerHTML = "เก็บดาวไปแล้ว " + star + " ดาว";
+    }
+    
+    function onClickGuess() {
+        let pass = document.getElementById("name2").value;
+    	if( pass == "234567"){
+        	alert("ถูกต้องเก่งมาก");
+        }else{
+        	alert("ผิดจ้า ไว้มาทายใหม่นะ");
+        }
+    }
+  </script>
 </body>
 </html>
